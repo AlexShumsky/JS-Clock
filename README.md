@@ -1,2 +1,2 @@
 # JS-Clock
-Virtual clock
+# https://AlexShumsky.github.io/JS-Clock/
