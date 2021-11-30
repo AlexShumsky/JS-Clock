@@ -1,1 +1,150 @@
 @import url("nullstyle.css");
+.wrapper {
+	overflow: hidden;
+	height: 100vh;
+	width: 100%;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+
+	background: rgb(231, 230, 230);
+	transition: all 1s ease 0s;
+}
+.header {
+	max-height: 100px;
+}
+h1 {
+	font-size: 50px;
+	letter-spacing: 2px;
+}
+h2 {
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.theme__color {
+	position: absolute;
+	overflow: hidden;
+	top: 5px;
+	left: 5px;
+	display: flex;
+	width: 50px;
+	height: 25px;
+	border: 1px solid #000;
+	border-radius: 20px;
+	transition: all 1s ease 0s;
+}
+.theme {
+}
+.theme-l {
+	flex: 0 1 50%;
+	border-left: 1px solid #000;
+}
+.theme-d {
+	flex: 0 1 50%;
+	border-right: 1px solid #000;
+}
+.active-theme {
+	background: #000;
+}
+.container {
+	padding: 5px 20px;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+}
+.main {
+	height: 100%;
+	width: 100%;
+}
+.clocks {
+	display: flex;
+	height: 100%;
+}
+.clock__container {
+	flex: 0 1 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	align-items: center;
+}
+.clock {
+	border: 1px solid #000;
+	background: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+}
+.clock-face {
+	border: 1px solid #000;
+	display: block;
+	min-height: 100px;
+	min-width: 100px;
+	height: 280px;
+	width: 280px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	background: url("../assets/watch.jpg") 0 80% / cover no-repeat;
+}
+.clock-face::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgb(0, 0, 0, 0.2);
+	display: block;
+	z-index: 1;
+	opacity: 0.3;
+}
+.hand {
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	display: block;
+	height: 5px;
+	width: 35%;
+	background: #000;
+	transform-origin: 100%;
+}
+.hour-hand {
+}
+.minute-hand {
+}
+.second-hand {
+}
+/***********************DARK THEME**************************/
+.dark {
+	transition: all 1s ease 0s;
+}
+.dark .wrapper {
+	background: rgba(0, 0, 0, 0.822);
+	color: white;
+	transition: all 1s ease 0s;
+}
+.dark .active-theme {
+	background: rgb(255, 255, 255);
+	transition: all 1s ease 0s;
+}
+.dark .theme__color {
+	transition: all 0.3s ease 0s;
+}
+.dark .clock {
+	border: 1px solid black;
+	background: rgb(255, 255, 255);
+}
+.dark .clock-face {
+	border: 1px solid black;
+}
+.dark .clock-face::before {
+	background: rgb(0, 0, 0, 0.2);
+	opacity: 0.3;
+}
