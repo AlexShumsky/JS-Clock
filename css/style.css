@@ -115,15 +115,41 @@ h2 {
 	background: #000;
 	transform-origin: 100%;
 	transform: rotate(90deg);
+	border-radius: 5px;
+	transition: all 0.3s cubic-bezier(0, 1.65, 1, 1.7) 0s;
 }
+
 .hour-hand {
+	height: 6px;
 }
 .minute-hand {
+	left: 5%;
+	width: 45%;
+	background: rgba(0, 0, 0, 0.74);
 }
 .second-hand {
+	left: 5%;
+	width: 45%;
+	background: rgb(255, 115, 1);
+}
+.second-hand::before {
+	content: "";
+	position: absolute;
+	top: -50%;
+	left: 95%;
+	display: block;
+	height: 10px;
+	width: 10px;
+	background: rgb(0, 0, 0);
+	border-radius: 50%;
+	border: 1px solid rgb(255, 115, 1);
 }
 /***********************DARK THEME**************************/
 .dark {
+	transition: all 1s ease 0s;
+}
+.dark .second-hand {
+	background: rgb(255, 1, 1);
 	transition: all 1s ease 0s;
 }
 .dark .wrapper {
@@ -148,4 +174,7 @@ h2 {
 .dark .clock-face::before {
 	background: rgb(0, 0, 0, 0.2);
 	opacity: 0.3;
+}
+.dark .second-hand::before {
+	border: 1px solid rgb(255, 0, 0);
 }

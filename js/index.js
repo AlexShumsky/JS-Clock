@@ -26,6 +26,15 @@ function showTime() {
 	showHours(date.getHours(), date.getMinutes());
 }
 function showSeconds(seconds) {
+	if (seconds == 0) {
+		secondHands.forEach(secondHand => secondHand.style.transitionDuration = '0s');
+		minuteHands.forEach(minuteHand => minuteHand.style.transitionDuration = '0s');
+		hourHands.forEach(hourHand => hourHand.style.transitionDuration = '0s');
+	} else {
+		secondHands.forEach(secondHand => secondHand.style.transitionDuration = '0.05s');
+		minuteHands.forEach(minuteHand => minuteHand.style.transitionDuration = '0.05s');
+		hourHands.forEach(hourHand => hourHand.style.transitionDuration = '0.05s');
+	}
 	const degree = (seconds / 60) * 360 + 90;
 	secondHands.forEach(secondHand => secondHand.style.transform = `rotate(${degree}deg)`);
 }
