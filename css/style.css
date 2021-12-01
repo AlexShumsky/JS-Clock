@@ -114,6 +114,7 @@ h2 {
 	width: 35%;
 	background: #000;
 	transform-origin: 100%;
+	transform: rotate(90deg);
 }
 .hour-hand {
 }
