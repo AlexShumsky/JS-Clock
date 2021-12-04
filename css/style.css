@@ -1,29 +1,56 @@
 @import url("nullstyle.css");
 .wrapper {
-	overflow: hidden;
-	height: 100vh;
-	width: 100%;
-
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
+	position: relative;
+	overflow: hidden;
 
+	height: 100vh;
+	min-width: 360px;
 	background: rgb(231, 230, 230);
 	transition: all 1s ease 0s;
 }
+.content {
+	height: 90vh;
+	overflow: hidden;
+}
+.container {
+	height: 100%;
+	margin: 0 auto;
+	padding: 0px 10px;
+}
+.content__rows {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.footer {
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 16px;
+	letter-spacing: 1.2px;
+}
+
+.main {
+	height: 90%;
+}
+/***********************HEADER**************************/
 .header {
-	max-height: 100px;
+	text-align: center;
+	height: 10%;
+	width: 100%;
+	padding: 5px 0px;
 }
 h1 {
-	font-size: 50px;
+	font-size: 40px;
 	letter-spacing: 2px;
+	font-weight: 700;
 }
-h2 {
-	font-size: 30px;
-	letter-spacing: 2px;
-}
+
+/***********************THEME**************************/
 .theme__color {
 	position: absolute;
 	overflow: hidden;
@@ -36,8 +63,6 @@ h2 {
 	border-radius: 20px;
 	transition: all 1s ease 0s;
 }
-.theme {
-}
 .theme-l {
 	flex: 0 1 50%;
 	border-left: 1px solid #000;
@@ -49,27 +74,28 @@ h2 {
 .active-theme {
 	background: #000;
 }
-.container {
-	padding: 5px 20px;
-	margin: 0 auto;
-	height: 100%;
-	width: 100%;
-}
-.main {
-	height: 100%;
-	width: 100%;
+/***********************CLOCKS**************************/
+h2 {
+	font-size: 30px;
+	letter-spacing: 2px;
 }
 .clocks {
 	display: flex;
 	height: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: auto;
 }
 .clock__container {
-	flex: 0 1 25%;
+	flex: 1 1 25%;
+
+	padding: 0px 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 
 	align-items: center;
+	height: 100%;
 }
 .clock {
 	border: 1px solid #000;
@@ -118,7 +144,6 @@ h2 {
 	border-radius: 5px;
 	transition: all 0.3s cubic-bezier(0, 1.65, 1, 1.7) 0s;
 }
-
 .hour-hand {
 	height: 6px;
 }

@@ -24,6 +24,7 @@ function showTime() {
 	showSeconds(date.getSeconds());
 	showMinutes(date.getMinutes());
 	showHours(date.getHours(), date.getMinutes());
+	showDate(date);
 }
 function showSeconds(seconds) {
 	if (seconds == 0) {
@@ -45,5 +46,12 @@ function showMinutes(minutes) {
 function showHours(hours, mins) {
 	const degrees = [hours - 3, hours - 8, hours - 18, hours].map(hour => hour / 12 * 360 + 90 + (mins / 60) * 30);
 	hourHands.forEach((hourHand, city) => hourHand.style.transform = `rotate(${degrees[city]}deg)`);
+}
+function showDate(date) {
+	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+	const footer = document.querySelector('.date__container');
+	footer.innerHTML = `${time} ${days[date.getDay()]} ${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()}`;
 }
 setInterval(showTime, 1000);
