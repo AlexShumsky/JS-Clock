@@ -44,7 +44,7 @@ function showMinutes(minutes) {
 	minuteHands.forEach(minuteHand => minuteHand.style.transform = `rotate(${degree}deg)`);
 }
 function showHours(hours, mins) {
-	const degrees = [hours - 3, hours - 8, hours - 18, hours].map(hour => hour / 12 * 360 + 90 + (mins / 60) * 30);
+	const degrees = [hours, hours - 8, hours - 18, hours - 3].map(hour => hour / 12 * 360 + 90 + (mins / 60) * 30);
 	hourHands.forEach((hourHand, city) => hourHand.style.transform = `rotate(${degrees[city]}deg)`);
 }
 function showDate(date) {
